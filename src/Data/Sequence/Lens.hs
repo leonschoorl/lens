@@ -106,7 +106,7 @@ slicedFrom n f m = case Seq.splitAt n m of
 --
 -- >>> fromList [a,b,c,d,e] & sliced 1 3 %~ f
 -- fromList [a,f b,f c,d,e]
-
+--
 -- >>> fromList [a,b,c,d,e] ^.. sliced 1 3
 -- [f b,f c]
 --

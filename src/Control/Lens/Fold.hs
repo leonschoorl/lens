@@ -614,7 +614,7 @@ foldlOf l f z = (flip appEndo z .# getDual) `rmap` foldMapOf l (Dual #. Endo #. 
 -- 'Data.Foldable.toList' ≡ 'toListOf' 'folded'
 -- ('^..') ≡ 'flip' 'toListOf'
 -- @
-
+--
 -- >>> toListOf both ("hello","world")
 -- ["hello","world"]
 --
@@ -2021,7 +2021,7 @@ ipreview l = asks (getFirst #. ifoldMapOf l (\i a -> First (Just (i, a))))
 --
 -- This is usually applied in the 'Control.Monad.Reader.Reader'
 -- 'Control.Monad.Monad' @(->) s@.
-
+--
 -- @
 -- 'previews' = 'views' '.' 'pre'
 -- @
