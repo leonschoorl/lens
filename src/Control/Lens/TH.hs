@@ -623,6 +623,9 @@ makeWrappedInstance dataDecl con fieldType = do
 
   -- type Unwrapped (Con a b c...) = $fieldType
   let unwrappedATF = tySynInstDCompat unwrappedTypeName
+#if MIN_VERSION_th_abstraction(0,3,0)
+                       Nothing
+#endif
                        [return appliedType] (return fieldType)
 
   -- Wrapped (Con a b c...)
